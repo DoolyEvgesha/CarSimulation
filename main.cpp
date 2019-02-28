@@ -9,6 +9,9 @@
 #include <string.h>
 #include <vector>
 
+#include "car.h"
+#include "parseInfo.h"
+
 
 #define MSGSZ 128
 using namespace std;
@@ -32,7 +35,7 @@ void stop(int id){
     cout << "stop" << endl;
     return;
 }
-void crash()
+void finish()
 {
     cout << "finish" << endl;
     exit(0);
@@ -119,23 +122,30 @@ void cars_init(int num, int* cars)
 int main()
 {
     cout << "How many cars?" << endl;
-    int n;
+    int    n;
     cin >> n;
     int cars[n];
+
     cars_create(n, cars);
-    int msid[n+1] = {};
+
+    int msid[n+1]       = {};
     msg_init(msid, cars, n);
     cars_init(n, cars);
-    char command[100] = {};
-    int id = 0;
-    errno = 0;
+
+    char command[100]   = {};
+    int id              = 0;
+    errno               = 0;
+
     while (errno == 0) {
         cin >> id >> command;
         send_command(id, command, n, msid);
     }
+
     for (int i = 0; i <= n; ++i)
         msgctl(msid[i+1], IPC_RMID, NULL);
+
     cout << "Server crashed" << endl;
     wait(NULL);
+
     return 0;
 }
