@@ -46,11 +46,14 @@ private:
     Location    lct_;
     carParam    length_;
     carParam    width_;
+    int         speed_;
+    int         command_;
 
 public:
-    Car         ();
-    ~Car        ();
-    bool        sendCarCommand ();
+    Car                         (carId id, Location lct, carParam length, carParam width);
+    ~Car                        ();
+    bool        sendCarCommand  (char * command);
+    bool        setSpeed        (int speed);
 };
 
 #endif

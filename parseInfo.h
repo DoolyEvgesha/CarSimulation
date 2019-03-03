@@ -9,7 +9,7 @@ private:
     //Location            lct[num];
     std::vector <Location>  lct_;
 public:
-    Crossings               ();
+    Crossings               (int num);
     ~Crossings              ();
     bool openDocument       ();
     bool getCrossings       ();
