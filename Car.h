@@ -5,6 +5,15 @@
 #ifndef CAR_PROJECT_CAR_H
 #define CAR_PROJECT_CAR_H
 
+#define END 100
+#define RIGHT 101
+#define LEFT 102
+#define GO 103
+#define SPEED 50
+#define CROSS_SPEED 50
+#define C_ZONE 22
+#define DLG_ZONE 40
+
 #include "Cross.h"
 #include <mutex>
 #include "Building.h"

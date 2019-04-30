@@ -2,14 +2,14 @@
 // Created by vladimir on 13.04.19.
 //
 
-#define END 100
+/*#define END 100
 #define RIGHT 101
 #define LEFT 102
 #define GO 103
-#define SPEED 150
-#define CROSS_SPEED 70
+#define SPEED 100
+#define CROSS_SPEED 50
 #define C_ZONE 22
-#define DLG_ZONE 40
+#define DLG_ZONE 40*/
 
 #include "Car.h"
 #include "Map.h"
@@ -35,6 +35,28 @@ extern std::mutex mute;
 using namespace std;
 
 int func(msgbuf &buffer, int msgid);
+int find(Cross_* from, Cross_* to);
+
+void delegate(Cross_* from, Cross_* to)
+{
+    ++to->counter[find(from, to)].second;
+    //cout << to->counter[find(from, to)].first << " " << to->counter[find(from, to)].second << endl;
+}
+
+void undelegate(Cross_* from, Cross_* to)
+{
+    --to->counter[find(from, to)].second;
+    //cout << to->counter[find(from, to)].first << " " << to->counter[find(from, to)].second << endl;
+}
+
+int find(Cross_* from, Cross_* to) {
+    for (int i = 0; i < (to->counter).size(); ++i) {
+        if (to->counter[i].first == from) {
+            return i;
+        }
+    }
+    return 0;
+}
 
 int is_right(Car_* car, Cross_* goal)
 {
@@ -280,6 +302,9 @@ void* Car_::run()
                         speed = CROSS_SPEED;
                     }
                 }
+            } else
+            {
+                speed = CROSS_SPEED;
             }
         }
 
@@ -287,9 +312,8 @@ void* Car_::run()
             if (abs(rast_end) < DLG_ZONE) {
                 goals[1]->mtx_reserv->lock();
                 goals[1]->delegators.push_back(this);
-                //goals[1]->delegators.push_back(this);
+                delegate(goals[0], goals[1]);
                 goals[1]->mtx_reserv->unlock();
-                //cout << goals[1]->delegators.size() << endl;
                 delegate_flag = 1;
             }
         }
@@ -297,7 +321,7 @@ void* Car_::run()
         if (delegate_flag == 1) {
             if ((abs)(rast_beg) > C_ZONE && abs(rast_end) > DLG_ZONE) {
                 goals[0]->mtx_reserv->lock();
-                goals[0]->delegators.erase(goals[0]->delegators.begin());
+                goals[0]->delegators.pop_front();
                 goals[0]->mtx_reserv->unlock();
                 //cout << "Otpiska" << rast_beg << endl;
                 delegate_flag = 0;
@@ -305,9 +329,9 @@ void* Car_::run()
         }
 
 
-        mutx->lock();
+        //mutx->lock();
         this->move(tm);
-        mutx->unlock();
+        //mutx->unlock();
         //usleep(1000);
 
         if (abs(x - goals[1]->x) == 0 && abs(y - goals[1]->y) == 0) {
@@ -329,6 +353,7 @@ void* Car_::run()
             num = rand() % (goals[goals.size() - 1]->rels.size()) + 0;
             Cross_ *r = goals[0];
             ex = goals[goals.size() - 1]->rels[num];
+            undelegate(goals[0], goals[1]);
             goals.erase(goals.begin());
             if (goals.size() == 2)
                 goals.push_back(ex);
@@ -342,9 +367,7 @@ void* Car_::run()
                 //    mutx->lock();
             }
             tm = clock();
-        }
-        //mutx->unlock();
-        usleep(200);
+        }usleep(50);
     }
     cout << "Car crushed" << endl;
     exit(0);

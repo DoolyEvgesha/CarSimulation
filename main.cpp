@@ -20,6 +20,7 @@
 using namespace std;
 
 mutex mute;
+int delay;
 
 int send_command(int id, char* com)
 {
@@ -127,6 +128,7 @@ int main()
             finp >> x >> c >> y >> code;
             ex = search(&(cross), x, y);
             elem->rels.push_back(ex);
+            elem->counter.push_back({ex, 0});
         }
         ++i;
     }

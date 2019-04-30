@@ -3,8 +3,8 @@
 //
 
 #define MULTI 1.5
-#define CAR_LENGTH 6
-#define CAR_WIDTH 3
+#define CAR_LENGTH 3
+#define CAR_WIDTH 2
 
 
 #include "Map.h"
@@ -74,31 +74,31 @@ void Map_::draw()
         if (c->x || c->y)
         {
             sf::RectangleShape car;
-            c->mutx->lock();
+            //c->mutx->lock();
             if (c->goals[1]->x - c->goals[0]->x > 0) {
                 car.setSize(sf::Vector2f(CAR_LENGTH * MULTI*2, CAR_WIDTH * MULTI*2));
-                car.setPosition((c->x - CAR_LENGTH) * MULTI, (c->y + 3) * MULTI);
+                car.setPosition((c->x - CAR_LENGTH) * MULTI, (c->y + 6) * MULTI);
                 car.setFillColor(sf::Color::White);
             }
             if (c->goals[1]->x - c->goals[0]->x < 0)
             {
                 car.setSize(sf::Vector2f(CAR_LENGTH * MULTI*2, CAR_WIDTH * MULTI*2));
-                car.setPosition((c->x - CAR_LENGTH) * MULTI, (c->y - 2*CAR_WIDTH - 3) * MULTI);
+                car.setPosition((c->x - CAR_LENGTH) * MULTI, (c->y - 2*CAR_WIDTH - 6) * MULTI);
                 car.setFillColor(sf::Color::White);
             }
             if (c->goals[1]->y - c->goals[0]->y > 0)
             {
                 car.setSize(sf::Vector2f(CAR_WIDTH * MULTI*2, CAR_LENGTH * MULTI*2));
-                car.setPosition((c->x - 3 - CAR_WIDTH*2) * MULTI, (c->y - CAR_LENGTH) * MULTI);
+                car.setPosition((c->x - 6 - CAR_WIDTH*2) * MULTI, (c->y - CAR_LENGTH) * MULTI);
                 car.setFillColor(sf::Color::White);
             }
             if (c->goals[1]->y - c->goals[0]->y < 0)
             {
                 car.setSize(sf::Vector2f(CAR_WIDTH * MULTI*2, CAR_LENGTH * MULTI*2));
-                car.setPosition((c->x + 3) * MULTI, (c->y - CAR_LENGTH) * MULTI);
+                car.setPosition((c->x + 6) * MULTI, (c->y - CAR_LENGTH) * MULTI);
                 car.setFillColor(sf::Color::White);
             }
-            c->mutx->unlock();
+            //c->mutx->unlock();
             window->draw(car);
         }
     }

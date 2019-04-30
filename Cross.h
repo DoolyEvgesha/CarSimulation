@@ -20,6 +20,7 @@ public:
     Cross_(int, int);
     std::vector <Cross_*> rels;
     std::list <Car_*> delegators;
+    std::vector <std::pair<Cross_*, int>> counter;
     std::mutex* mtx_reserv;
     std::mutex* mtx;
 };
