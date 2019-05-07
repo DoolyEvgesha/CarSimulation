@@ -9,9 +9,9 @@
 #define RIGHT 101
 #define LEFT 102
 #define GO 103
-#define SPEED 50
+#define SPEED 100
 #define CROSS_SPEED 50
-#define C_ZONE 22
+#define C_ZONE 20
 #define DLG_ZONE 40
 
 #include "Cross.h"

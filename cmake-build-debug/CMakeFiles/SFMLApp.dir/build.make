@@ -43,10 +43,10 @@ RM = /snap/clion/69/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vladimir/CLionProjects/car_project
+CMAKE_SOURCE_DIR = /home/vladimir/CarSimulation
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vladimir/CLionProjects/car_project/cmake-build-debug
+CMAKE_BINARY_DIR = /home/vladimir/CarSimulation/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/SFMLApp.dir/depend.make
@@ -59,68 +59,68 @@ include CMakeFiles/SFMLApp.dir/flags.make
 
 CMakeFiles/SFMLApp.dir/Building.cpp.o: CMakeFiles/SFMLApp.dir/flags.make
 CMakeFiles/SFMLApp.dir/Building.cpp.o: ../Building.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vladimir/CLionProjects/car_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SFMLApp.dir/Building.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLApp.dir/Building.cpp.o -c /home/vladimir/CLionProjects/car_project/Building.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vladimir/CarSimulation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SFMLApp.dir/Building.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLApp.dir/Building.cpp.o -c /home/vladimir/CarSimulation/Building.cpp
 
 CMakeFiles/SFMLApp.dir/Building.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLApp.dir/Building.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vladimir/CLionProjects/car_project/Building.cpp > CMakeFiles/SFMLApp.dir/Building.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vladimir/CarSimulation/Building.cpp > CMakeFiles/SFMLApp.dir/Building.cpp.i
 
 CMakeFiles/SFMLApp.dir/Building.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLApp.dir/Building.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vladimir/CLionProjects/car_project/Building.cpp -o CMakeFiles/SFMLApp.dir/Building.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vladimir/CarSimulation/Building.cpp -o CMakeFiles/SFMLApp.dir/Building.cpp.s
 
 CMakeFiles/SFMLApp.dir/Car.cpp.o: CMakeFiles/SFMLApp.dir/flags.make
 CMakeFiles/SFMLApp.dir/Car.cpp.o: ../Car.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vladimir/CLionProjects/car_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SFMLApp.dir/Car.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLApp.dir/Car.cpp.o -c /home/vladimir/CLionProjects/car_project/Car.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vladimir/CarSimulation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SFMLApp.dir/Car.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLApp.dir/Car.cpp.o -c /home/vladimir/CarSimulation/Car.cpp
 
 CMakeFiles/SFMLApp.dir/Car.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLApp.dir/Car.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vladimir/CLionProjects/car_project/Car.cpp > CMakeFiles/SFMLApp.dir/Car.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vladimir/CarSimulation/Car.cpp > CMakeFiles/SFMLApp.dir/Car.cpp.i
 
 CMakeFiles/SFMLApp.dir/Car.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLApp.dir/Car.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vladimir/CLionProjects/car_project/Car.cpp -o CMakeFiles/SFMLApp.dir/Car.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vladimir/CarSimulation/Car.cpp -o CMakeFiles/SFMLApp.dir/Car.cpp.s
 
 CMakeFiles/SFMLApp.dir/Map.cpp.o: CMakeFiles/SFMLApp.dir/flags.make
 CMakeFiles/SFMLApp.dir/Map.cpp.o: ../Map.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vladimir/CLionProjects/car_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SFMLApp.dir/Map.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLApp.dir/Map.cpp.o -c /home/vladimir/CLionProjects/car_project/Map.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vladimir/CarSimulation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SFMLApp.dir/Map.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLApp.dir/Map.cpp.o -c /home/vladimir/CarSimulation/Map.cpp
 
 CMakeFiles/SFMLApp.dir/Map.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLApp.dir/Map.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vladimir/CLionProjects/car_project/Map.cpp > CMakeFiles/SFMLApp.dir/Map.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vladimir/CarSimulation/Map.cpp > CMakeFiles/SFMLApp.dir/Map.cpp.i
 
 CMakeFiles/SFMLApp.dir/Map.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLApp.dir/Map.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vladimir/CLionProjects/car_project/Map.cpp -o CMakeFiles/SFMLApp.dir/Map.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vladimir/CarSimulation/Map.cpp -o CMakeFiles/SFMLApp.dir/Map.cpp.s
 
 CMakeFiles/SFMLApp.dir/Cross.cpp.o: CMakeFiles/SFMLApp.dir/flags.make
 CMakeFiles/SFMLApp.dir/Cross.cpp.o: ../Cross.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vladimir/CLionProjects/car_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SFMLApp.dir/Cross.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLApp.dir/Cross.cpp.o -c /home/vladimir/CLionProjects/car_project/Cross.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vladimir/CarSimulation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SFMLApp.dir/Cross.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLApp.dir/Cross.cpp.o -c /home/vladimir/CarSimulation/Cross.cpp
 
 CMakeFiles/SFMLApp.dir/Cross.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLApp.dir/Cross.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vladimir/CLionProjects/car_project/Cross.cpp > CMakeFiles/SFMLApp.dir/Cross.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vladimir/CarSimulation/Cross.cpp > CMakeFiles/SFMLApp.dir/Cross.cpp.i
 
 CMakeFiles/SFMLApp.dir/Cross.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLApp.dir/Cross.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vladimir/CLionProjects/car_project/Cross.cpp -o CMakeFiles/SFMLApp.dir/Cross.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vladimir/CarSimulation/Cross.cpp -o CMakeFiles/SFMLApp.dir/Cross.cpp.s
 
 CMakeFiles/SFMLApp.dir/main.cpp.o: CMakeFiles/SFMLApp.dir/flags.make
 CMakeFiles/SFMLApp.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vladimir/CLionProjects/car_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SFMLApp.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLApp.dir/main.cpp.o -c /home/vladimir/CLionProjects/car_project/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vladimir/CarSimulation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SFMLApp.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLApp.dir/main.cpp.o -c /home/vladimir/CarSimulation/main.cpp
 
 CMakeFiles/SFMLApp.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLApp.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vladimir/CLionProjects/car_project/main.cpp > CMakeFiles/SFMLApp.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vladimir/CarSimulation/main.cpp > CMakeFiles/SFMLApp.dir/main.cpp.i
 
 CMakeFiles/SFMLApp.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLApp.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vladimir/CLionProjects/car_project/main.cpp -o CMakeFiles/SFMLApp.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vladimir/CarSimulation/main.cpp -o CMakeFiles/SFMLApp.dir/main.cpp.s
 
 # Object files for target SFMLApp
 SFMLApp_OBJECTS = \
@@ -140,7 +140,7 @@ SFMLApp: CMakeFiles/SFMLApp.dir/Cross.cpp.o
 SFMLApp: CMakeFiles/SFMLApp.dir/main.cpp.o
 SFMLApp: CMakeFiles/SFMLApp.dir/build.make
 SFMLApp: CMakeFiles/SFMLApp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vladimir/CLionProjects/car_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable SFMLApp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vladimir/CarSimulation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable SFMLApp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SFMLApp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -153,6 +153,6 @@ CMakeFiles/SFMLApp.dir/clean:
 .PHONY : CMakeFiles/SFMLApp.dir/clean
 
 CMakeFiles/SFMLApp.dir/depend:
-	cd /home/vladimir/CLionProjects/car_project/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/vladimir/CLionProjects/car_project /home/vladimir/CLionProjects/car_project /home/vladimir/CLionProjects/car_project/cmake-build-debug /home/vladimir/CLionProjects/car_project/cmake-build-debug /home/vladimir/CLionProjects/car_project/cmake-build-debug/CMakeFiles/SFMLApp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/vladimir/CarSimulation/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/vladimir/CarSimulation /home/vladimir/CarSimulation /home/vladimir/CarSimulation/cmake-build-debug /home/vladimir/CarSimulation/cmake-build-debug /home/vladimir/CarSimulation/cmake-build-debug/CMakeFiles/SFMLApp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/SFMLApp.dir/depend
 

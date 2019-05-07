@@ -324,6 +324,7 @@ void* Car_::run()
                 goals[0]->delegators.pop_front();
                 goals[0]->mtx_reserv->unlock();
                 //cout << "Otpiska" << rast_beg << endl;
+                speed = SPEED;
                 delegate_flag = 0;
             }
         }
@@ -350,6 +351,7 @@ void* Car_::run()
                 //    mutx->lock();
             }
 
+            //goals[1]->counter[find(goals[0], goals[1])].second--;
             num = rand() % (goals[goals.size() - 1]->rels.size()) + 0;
             Cross_ *r = goals[0];
             ex = goals[goals.size() - 1]->rels[num];

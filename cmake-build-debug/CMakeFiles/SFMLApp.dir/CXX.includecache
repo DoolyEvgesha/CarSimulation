@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/vladimir/CLionProjects/car_project/Building.h
+/home/vladimir/CarSimulation/Building.h
 SFML/Graphics.hpp
 -
 
-/home/vladimir/CLionProjects/car_project/Car.cpp
+/home/vladimir/CarSimulation/Car.cpp
 Car.h
-/home/vladimir/CLionProjects/car_project/Car.h
+/home/vladimir/CarSimulation/Car.h
 Map.h
-/home/vladimir/CLionProjects/car_project/Map.h
+/home/vladimir/CarSimulation/Map.h
 iostream
 -
 random
@@ -44,19 +44,19 @@ vector
 fstream
 -
 
-/home/vladimir/CLionProjects/car_project/Car.h
+/home/vladimir/CarSimulation/Car.h
 Cross.h
-/home/vladimir/CLionProjects/car_project/Cross.h
+/home/vladimir/CarSimulation/Cross.h
 mutex
 -
 Building.h
-/home/vladimir/CLionProjects/car_project/Building.h
+/home/vladimir/CarSimulation/Building.h
 
-/home/vladimir/CLionProjects/car_project/Cross.h
+/home/vladimir/CarSimulation/Cross.h
 Car.h
-/home/vladimir/CLionProjects/car_project/Car.h
+/home/vladimir/CarSimulation/Car.h
 Building.h
-/home/vladimir/CLionProjects/car_project/Building.h
+/home/vladimir/CarSimulation/Building.h
 mutex
 -
 list
@@ -64,13 +64,13 @@ list
 vector
 -
 
-/home/vladimir/CLionProjects/car_project/Map.h
+/home/vladimir/CarSimulation/Map.h
 Building.h
-/home/vladimir/CLionProjects/car_project/Building.h
+/home/vladimir/CarSimulation/Building.h
 Cross.h
-/home/vladimir/CLionProjects/car_project/Cross.h
+/home/vladimir/CarSimulation/Cross.h
 Car.h
-/home/vladimir/CLionProjects/car_project/Car.h
+/home/vladimir/CarSimulation/Car.h
 vector
 -
 SFML/Graphics.hpp

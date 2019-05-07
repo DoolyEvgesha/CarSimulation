@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/vladimir/CLionProjects/car_project/SFML_INCLUDE_DIR 
+CXX_INCLUDES = -I/home/vladimir/CarSimulation/SFML_INCLUDE_DIR 
 

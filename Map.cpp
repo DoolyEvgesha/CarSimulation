@@ -2,10 +2,6 @@
 // Created by vladimir on 14.04.19.
 //
 
-#define MULTI 1.5
-#define CAR_LENGTH 3
-#define CAR_WIDTH 2
-
 
 #include "Map.h"
 

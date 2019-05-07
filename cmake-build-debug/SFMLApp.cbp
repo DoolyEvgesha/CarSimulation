@@ -8,33 +8,33 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/vladimir/CLionProjects/car_project/cmake-build-debug"/>
+				<Option working_dir="/home/vladimir/CarSimulation/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/vladimir/CLionProjects/car_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/vladimir/CLionProjects/car_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/vladimir/CLionProjects/car_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/vladimir/CLionProjects/car_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/vladimir/CarSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/vladimir/CarSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/vladimir/CarSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/vladimir/CarSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/vladimir/CLionProjects/car_project/cmake-build-debug"/>
+				<Option working_dir="/home/vladimir/CarSimulation/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/vladimir/CLionProjects/car_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/vladimir/CLionProjects/car_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/vladimir/CLionProjects/car_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/vladimir/CLionProjects/car_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/vladimir/CarSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/vladimir/CarSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/vladimir/CarSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/vladimir/CarSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="SFMLApp">
-				<Option output="/home/vladimir/CLionProjects/car_project/cmake-build-debug/SFMLApp" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/vladimir/CLionProjects/car_project/cmake-build-debug"/>
+				<Option output="/home/vladimir/CarSimulation/cmake-build-debug/SFMLApp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/vladimir/CarSimulation/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/vladimir/CLionProjects/car_project/SFML_INCLUDE_DIR"/>
+					<Add directory="/home/vladimir/CarSimulation/SFML_INCLUDE_DIR"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -45,20 +45,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/vladimir/CLionProjects/car_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 SFMLApp"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/vladimir/CLionProjects/car_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/vladimir/CLionProjects/car_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/vladimir/CLionProjects/car_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/vladimir/CarSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 SFMLApp"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/vladimir/CarSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/vladimir/CarSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/vladimir/CarSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="SFMLApp/fast">
-				<Option output="/home/vladimir/CLionProjects/car_project/cmake-build-debug/SFMLApp" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/vladimir/CLionProjects/car_project/cmake-build-debug"/>
+				<Option output="/home/vladimir/CarSimulation/cmake-build-debug/SFMLApp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/vladimir/CarSimulation/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/vladimir/CLionProjects/car_project/SFML_INCLUDE_DIR"/>
+					<Add directory="/home/vladimir/CarSimulation/SFML_INCLUDE_DIR"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -69,54 +69,54 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/vladimir/CLionProjects/car_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 SFMLApp/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/vladimir/CLionProjects/car_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/vladimir/CLionProjects/car_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/vladimir/CLionProjects/car_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/vladimir/CarSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 SFMLApp/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/vladimir/CarSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/vladimir/CarSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/vladimir/CarSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/vladimir/CLionProjects/car_project/cmake-build-debug"/>
+				<Option working_dir="/home/vladimir/CarSimulation/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/vladimir/CLionProjects/car_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/vladimir/CLionProjects/car_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/vladimir/CLionProjects/car_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/vladimir/CLionProjects/car_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/vladimir/CarSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/vladimir/CarSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/vladimir/CarSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/vladimir/CarSimulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/vladimir/CLionProjects/car_project/Building.cpp">
+		<Unit filename="/home/vladimir/CarSimulation/Building.cpp">
 			<Option target="SFMLApp"/>
 		</Unit>
-		<Unit filename="/home/vladimir/CLionProjects/car_project/Building.h">
+		<Unit filename="/home/vladimir/CarSimulation/Building.h">
 			<Option target="SFMLApp"/>
 		</Unit>
-		<Unit filename="/home/vladimir/CLionProjects/car_project/Car.cpp">
+		<Unit filename="/home/vladimir/CarSimulation/Car.cpp">
 			<Option target="SFMLApp"/>
 		</Unit>
-		<Unit filename="/home/vladimir/CLionProjects/car_project/Car.h">
+		<Unit filename="/home/vladimir/CarSimulation/Car.h">
 			<Option target="SFMLApp"/>
 		</Unit>
-		<Unit filename="/home/vladimir/CLionProjects/car_project/Cross.cpp">
+		<Unit filename="/home/vladimir/CarSimulation/Cross.cpp">
 			<Option target="SFMLApp"/>
 		</Unit>
-		<Unit filename="/home/vladimir/CLionProjects/car_project/Cross.h">
+		<Unit filename="/home/vladimir/CarSimulation/Cross.h">
 			<Option target="SFMLApp"/>
 		</Unit>
-		<Unit filename="/home/vladimir/CLionProjects/car_project/Map.cpp">
+		<Unit filename="/home/vladimir/CarSimulation/Map.cpp">
 			<Option target="SFMLApp"/>
 		</Unit>
-		<Unit filename="/home/vladimir/CLionProjects/car_project/Map.h">
+		<Unit filename="/home/vladimir/CarSimulation/Map.h">
 			<Option target="SFMLApp"/>
 		</Unit>
-		<Unit filename="/home/vladimir/CLionProjects/car_project/cmake-build-debug/car_project">
+		<Unit filename="/home/vladimir/CarSimulation/cmake-build-debug/car_project">
 			<Option target="SFMLApp"/>
 		</Unit>
-		<Unit filename="/home/vladimir/CLionProjects/car_project/main.cpp">
+		<Unit filename="/home/vladimir/CarSimulation/main.cpp">
 			<Option target="SFMLApp"/>
 		</Unit>
-		<Unit filename="/home/vladimir/CLionProjects/car_project/CMakeLists.txt">
+		<Unit filename="/home/vladimir/CarSimulation/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

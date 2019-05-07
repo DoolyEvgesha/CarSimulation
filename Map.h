@@ -5,6 +5,10 @@
 #ifndef CAR_PROJECT_MAP_H
 #define CAR_PROJECT_MAP_H
 
+#define MULTI 1.5
+#define CAR_LENGTH 3
+#define CAR_WIDTH 2
+
 #include "Building.h"
 #include "Cross.h"
 #include "Car.h"
