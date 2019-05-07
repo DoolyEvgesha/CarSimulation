@@ -63,9 +63,7 @@ int find(Cross_* from, Cross_* to) {
 
 int is_right(Car_* car, Cross_* goal)
 {
-    //cout << "Try to turn" << endl;
-    //cout << car-> goals[0]->x << ";" << car->goals[0]->y << " to " << car->goals[1]->x << ";" << car->goals[1]->y << endl;
-     if (car->goals[1]->y == car->goals[0]->y)
+    if (car->goals[1]->y == car->goals[0]->y)
     {
         if ((car->goals[1]->y - goal->y)*(car->goals[1]->x - car->goals[0]->x) < 0) {
             return 1;
@@ -87,8 +85,6 @@ int is_right(Car_* car, Cross_* goal)
 
 int is_right_turn(Car_* car, Cross_* goal)
 {
-    //cout << "Try to turn" << endl;
-    //cout << car-> goals[0]->x << ";" << car->goals[0]->y << " to " << car->goals[1]->x << ";" << car->goals[1]->y << endl;
     if (car->goals[2]->y == car->goals[1]->y)
     {
         if ((car->goals[2]->y - goal->y)*(car->goals[2]->x - car->goals[1]->x) < 0)
@@ -108,8 +104,6 @@ int is_right_turn(Car_* car, Cross_* goal)
 
 int is_left(Car_* car, Cross_* goal)
 {
-    //cout << "Try to turn" << endl;
-    //cout << car-> goals[0]->x << ";" << car->goals[0]->y << " to " << car->goals[1]->x << ";" << car->goals[1]->y << endl;
     if (car->goals[1]->y == car->goals[0]->y)
     {
         if ((car->goals[1]->y - goal->y)*(car->goals[1]->x - car->goals[0]->x) > 0)
@@ -146,7 +140,7 @@ int turn_left(Car_* cr)
     for (auto c: cr->goals[1]->rels)
     {
         if (is_left(cr, c)) {
-            cr->goals[/*cr->goals.size() - 1*/2] = c;
+            cr->goals[2] = c;
             cout << "it, s OK" << endl;
         }
     }
@@ -154,19 +148,10 @@ int turn_left(Car_* cr)
 }
 int go_forward(Car_* cr)
 {
-    /*if (dt != 0)
-        tm = clock() - dt;
-    dt = 0;*/
-    //cout << "Go at: " << cr->x << " " << cr->y << endl;
     cr->speed = SPEED;
     return GO;
 }
 int stop(Car_* cr){
-    //cout << cr->id << ": Let's stop" << endl;
-    /*if (dt == 0)
-        dt = clock() - time;*/
-    //cout << "Stop at: " << cr->x << " " << cr->y << endl;
-    //cr->pre_speed = cr->speed;
     cr->speed = 0;
     return 0;
 }
@@ -335,16 +320,9 @@ void* Car_::run()
             }
         }
 
-
-        //mutx->lock();
         this->move(tm);
-        //mutx->unlock();
-        //usleep(1000);
 
         if (abs(x - goals[1]->x) == 0 && abs(y - goals[1]->y) == 0) {
-            //cout << sqrt((goals[1]->x-goals[0]->x)*(goals[1]->x-goals[0]->x) + (goals[1]->y-goals[0]->y)*(goals[1]->y-goals[0]->y)) / ((float)(clock()-a)/CLOCKS_PER_SEC) << endl;
-            //mute.lock();
-            //mute.unlock();
             mutx->lock();
             x = goals[1]->x;
             y = goals[1]->y;
@@ -352,12 +330,9 @@ void* Car_::run()
 
             if (!((goals[2]->x == goals[1]->x && goals[1]->x == goals[0]->x) ||
                   (goals[2]->y == goals[1]->y && goals[1]->y == goals[0]->y)) || (goals[2] == goals[0])) {
-                //    mutx->unlock();
                 usleep(150000);
-                //    mutx->lock();
             }
 
-            //goals[1]->counter[find(goals[0], goals[1])].second--;
             num = rand() % (goals[goals.size() - 1]->rels.size()) + 0;
             Cross_ *r = goals[0];
             ex = goals[goals.size() - 1]->rels[num];
@@ -370,12 +345,10 @@ void* Car_::run()
 
             if (!((goals[1]->x == goals[0]->x && goals[0]->x == r->x) ||
                   (goals[1]->y == goals[0]->y && goals[0]->y == r->y)) || (goals[1] == r)) {
-                //    mutx->unlock();
                 usleep(150000);
-                //    mutx->lock();
             }
             tm = (duration_cast< milliseconds >(system_clock::now().time_since_epoch()));
-        }usleep(200);
+        }usleep(50);
     }
     cout << "Car crushed" << endl;
     exit(0);

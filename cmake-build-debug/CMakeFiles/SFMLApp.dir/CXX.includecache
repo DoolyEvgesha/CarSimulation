@@ -6,54 +6,8 @@
 
 #IncludeRegexTransform: 
 
-/home/vladimir/CarSimulation/Building.cpp
-SFML/Graphics.hpp
--
-SFML/Graphics/CircleShape.hpp
--
-Building.h
-/home/vladimir/CarSimulation/Building.h
-Map.h
-/home/vladimir/CarSimulation/Map.h
-
 /home/vladimir/CarSimulation/Building.h
 SFML/Graphics.hpp
--
-
-/home/vladimir/CarSimulation/Car.cpp
-Car.h
-/home/vladimir/CarSimulation/Car.h
-Map.h
-/home/vladimir/CarSimulation/Map.h
-iostream
--
-random
--
-unistd.h
--
-sys/wait.h
--
-time.h
--
-sys/types.h
--
-sys/ipc.h
--
-sys/msg.h
--
-errno.h
--
-error.h
--
-string.h
--
-stdlib.h
--
-vector
--
-fstream
--
-chrono
 -
 
 /home/vladimir/CarSimulation/Car.h
@@ -63,12 +17,6 @@ mutex
 -
 Building.h
 /home/vladimir/CarSimulation/Building.h
-
-/home/vladimir/CarSimulation/Cross.cpp
-Cross.h
-/home/vladimir/CarSimulation/Cross.h
-Map.h
-/home/vladimir/CarSimulation/Map.h
 
 /home/vladimir/CarSimulation/Cross.h
 Car.h
@@ -80,16 +28,6 @@ mutex
 list
 -
 vector
--
-
-/home/vladimir/CarSimulation/Map.cpp
-Map.h
-/home/vladimir/CarSimulation/Map.h
-SFML/Graphics.hpp
--
-zconf.h
--
-iostream
 -
 
 /home/vladimir/CarSimulation/Map.h

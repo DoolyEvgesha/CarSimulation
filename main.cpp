@@ -91,7 +91,7 @@ Cross_* search(vector <Cross_*>* vec, int x, int y)
 int main()
 {
     Map_* m =           Map_::get();
-    ifstream            finp("/home/vladimir/data", ios_base::in);
+    ifstream            finp("/home/vladimir/CarSimulation/data", ios_base::in);
     vector <Cross_*>    cross;
     Cross_              crs[100];
     Cross_*             ex;
@@ -114,7 +114,7 @@ int main()
         }
     }
     finp.close();
-    finp.open("/home/vladimir/data", ios_base::in);
+    finp.open("/home/vladimir/CarSimulation/data", ios_base::in);
     i = 0;
     code = 0;
     while(code != 'e' && !finp.eof())
