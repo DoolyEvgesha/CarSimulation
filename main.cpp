@@ -103,12 +103,10 @@ int main()
     vector<Car_*>        cars;
     char c;
 
-    while(code != 'e' && !finp.eof())
-    {
+    while(code != 'e' && !finp.eof()) {
         finp >> x >> c >> y >> code;
         ex = search(&(cross), x, y);
-        if (ex == nullptr)
-        {
+        if (ex == nullptr) {
             crs[i].x = x;
             crs[i].y = y;
             cross.push_back(crs + i);
@@ -178,7 +176,7 @@ int main()
             }
         }
         ser_end = 0;
-        flag = poll(arr, 1, 3);
+        flag = poll(arr, 1, 1);
         if (flag == 1)
         {
             cin >> id >> command;

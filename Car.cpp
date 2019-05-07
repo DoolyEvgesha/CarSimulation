@@ -28,6 +28,9 @@
 #include <stdlib.h>
 #include <vector>
 #include <fstream>
+#include <chrono>
+
+using namespace std::chrono;
 
 extern std::mutex mute;
 
@@ -177,7 +180,7 @@ int crash(Car_* car)
     return 1;
 }
 
-int func(msgbuf &buffer, Car_* cr, float &tm, float &dt)
+int func(msgbuf &buffer, Car_* cr)
 {
     int x = 0;
     if (!strcmp(buffer.mtext, "turn_right"))
@@ -194,34 +197,37 @@ int func(msgbuf &buffer, Car_* cr, float &tm, float &dt)
     return x;
 }
 
-void Car_::move(float& time) {
-    int t = (int)((((float)clock()-time) / CLOCKS_PER_SEC)*speed);
+void Car_::move(std::chrono::milliseconds& time) {
+    //cout << (duration_cast< milliseconds >(system_clock::now().time_since_epoch())-time).count() << endl;
+    int t = int(((duration_cast< milliseconds >(system_clock::now().time_since_epoch())-time).count() *speed)/1000);
     if (speed == 0)
-    {time = clock();}
-    if (t < 1)
+    {time = duration_cast< milliseconds >(system_clock::now().time_since_epoch());}
+    if (t < 1) {
+        //cout << "hey" << endl;
         return;
+    }
     if (goals[1]->x-goals[0]->x > 0)
     {
         x += t;
-        time = clock();
+        time = duration_cast< milliseconds >(system_clock::now().time_since_epoch());
         return;
     }
     if (goals[1]->x-goals[0]->x < 0)
     {
         x -= t;
-        time = clock();
+        time = duration_cast< milliseconds >(system_clock::now().time_since_epoch());
         return;
     }
     if (goals[1]->y-goals[0]->y >0)
     {
         y += t;
-        time = clock();
+        time = duration_cast< milliseconds >(system_clock::now().time_since_epoch());
         return;
     }
     if (goals[1]->y-goals[0]->y < 0)
     {
         y -= t;
-        time = clock();
+        time = duration_cast< milliseconds >(system_clock::now().time_since_epoch());
         return;
     }
 }
@@ -238,7 +244,7 @@ Car_::Car_()
 
 void* Car_::run()
 {
-    float           tm;
+    std::chrono::milliseconds           tm;
     float           dt;
     Cross_*         ex = nullptr;
     int             num;
@@ -255,14 +261,14 @@ void* Car_::run()
 
     buf.mtype = 1;
     strcpy(buf.mtext, null);
-    tm = clock();
+    tm = (duration_cast< milliseconds >(system_clock::now().time_since_epoch()));
 
     while (errno == 0 || !strcmp(buf.mtext, null)) {
 
 
         errno = 0;
         msgrcv(msgid, &buf, MSGSZ, 1, IPC_NOWAIT);
-        g = func(buf, this, tm, dt);
+        g = func(buf, this);
 
         if (g == 1)
             return NULL;
@@ -368,8 +374,8 @@ void* Car_::run()
                 usleep(150000);
                 //    mutx->lock();
             }
-            tm = clock();
-        }usleep(50);
+            tm = (duration_cast< milliseconds >(system_clock::now().time_since_epoch()));
+        }usleep(200);
     }
     cout << "Car crushed" << endl;
     exit(0);

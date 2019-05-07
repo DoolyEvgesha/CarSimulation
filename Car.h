@@ -31,7 +31,7 @@ public:
     std::vector <Cross_*> goals;
     Car_(int, int);
     void* run();
-    void move(float &);
+    void move(std::chrono::milliseconds &);
     Car_();
     void setid(int i);
 };
