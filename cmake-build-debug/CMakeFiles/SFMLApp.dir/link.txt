@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/SFMLApp.dir/Building.cpp.o CMakeFiles/SFMLApp.dir/Car.cpp.o CMakeFiles/SFMLApp.dir/Map.cpp.o CMakeFiles/SFMLApp.dir/Cross.cpp.o CMakeFiles/SFMLApp.dir/main.cpp.o  -o SFMLApp  -L/home/vladimir/CarSimulation/SFML_LIBRARY_DIR -Wl,-rpath,/home/vladimir/CarSimulation/SFML_LIBRARY_DIR -lsfml-graphics -lsfml-window -lsfml-system -lpthread 

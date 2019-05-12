@@ -9,10 +9,10 @@
 #define RIGHT 101
 #define LEFT 102
 #define GO 103
-#define SPEED 100
+#define SPEED 70
 #define CROSS_SPEED 50
 #define C_ZONE 20
-#define DLG_ZONE 40
+#define DLG_ZONE 60
 
 #include "Cross.h"
 #include <mutex>
@@ -31,7 +31,7 @@ public:
     std::vector <Cross_*> goals;
     Car_(int, int);
     void* run();
-    void move(std::chrono::milliseconds &);
+    void move(std::chrono::milliseconds &, Car_*);
     Car_();
     void setid(int i);
 };

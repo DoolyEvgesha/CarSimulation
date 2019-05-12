@@ -90,8 +90,9 @@ Cross_* search(vector <Cross_*>* vec, int x, int y)
 
 int main()
 {
+    cout << "Helo!" << endl;
     Map_* m =           Map_::get();
-    ifstream            finp("/home/vladimir/CarSimulation/data", ios_base::in);
+    ifstream            finp("/home/vladimir/CarProject/data", ios_base::in);
     vector <Cross_*>    cross;
     Cross_              crs[100];
     Cross_*             ex;
@@ -114,7 +115,7 @@ int main()
         }
     }
     finp.close();
-    finp.open("/home/vladimir/CarSimulation/data", ios_base::in);
+    finp.open("/home/vladimir/CarProject/data", ios_base::in);
     i = 0;
     code = 0;
     while(code != 'e' && !finp.eof())
@@ -176,7 +177,7 @@ int main()
             }
         }
         ser_end = 0;
-        flag = poll(arr, 1, 1);
+        flag = poll(arr, 1, 5);
         if (flag == 1)
         {
             cin >> id >> command;
@@ -202,6 +203,7 @@ int main()
         }
     }
 
+
     struct msgbuf   buf;
     buf.mtype =     1;
     char null[100] = {};
@@ -213,8 +215,14 @@ int main()
     }
 
     strcpy(command, "end");
-    for (i = 1; i <= n; ++i)
+    for (i = 1; i <= n; ++i) {
+        for (int k = 0; k < MAP_X; ++k)
+            for (int l = 0; l < MAP_Y; ++l) {
+                Map_::get()->bitmap[l][k].first = 0;
+                Map_::get()->bitmap[l][k].second = 0;
+            }
         send_command(i, command);
+    }
     for (i = 0; i < n; ++i)
         thr[i]->join();
 

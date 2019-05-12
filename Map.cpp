@@ -1,5 +1,5 @@
 //
-// Created by vladimir on 14.04.19.
+// Created by vladimir and Egorka on 14.04.19.
 //
 
 
@@ -72,24 +72,32 @@ void Map_::draw()
             sf::RectangleShape car;
             //c->mutx->lock();
             if (c->goals[1]->x - c->goals[0]->x > 0) {
+                for (int i = c->x-CAR_LENGTH; i < c->x+CAR_LENGTH; ++i)
+                    bitmap[c->y][i].first = 1;
                 car.setSize(sf::Vector2f(CAR_LENGTH * MULTI*2, CAR_WIDTH * MULTI*2));
                 car.setPosition((c->x - CAR_LENGTH) * MULTI, (c->y + 6) * MULTI);
                 car.setFillColor(sf::Color::White);
             }
             if (c->goals[1]->x - c->goals[0]->x < 0)
             {
+                for (int i = c->x-CAR_LENGTH; i < c->x+CAR_LENGTH; ++i)
+                    bitmap[c->y][i].second = 1;
                 car.setSize(sf::Vector2f(CAR_LENGTH * MULTI*2, CAR_WIDTH * MULTI*2));
                 car.setPosition((c->x - CAR_LENGTH) * MULTI, (c->y - 2*CAR_WIDTH - 6) * MULTI);
                 car.setFillColor(sf::Color::White);
             }
             if (c->goals[1]->y - c->goals[0]->y > 0)
             {
+                for (int i = c->y-CAR_LENGTH; i < c->y+CAR_LENGTH; ++i)
+                    bitmap[i][c->x].first = 1;
                 car.setSize(sf::Vector2f(CAR_WIDTH * MULTI*2, CAR_LENGTH * MULTI*2));
                 car.setPosition((c->x - 6 - CAR_WIDTH*2) * MULTI, (c->y - CAR_LENGTH) * MULTI);
                 car.setFillColor(sf::Color::White);
             }
             if (c->goals[1]->y - c->goals[0]->y < 0)
             {
+                for (int i = c->y-CAR_LENGTH; i < c->y+CAR_LENGTH; ++i)
+                    bitmap[i][c->x].second = 1;
                 car.setSize(sf::Vector2f(CAR_WIDTH * MULTI*2, CAR_LENGTH * MULTI*2));
                 car.setPosition((c->x + 6) * MULTI, (c->y - CAR_LENGTH) * MULTI);
                 car.setFillColor(sf::Color::White);
@@ -116,10 +124,19 @@ Map_* Map_::get()
 Map_::Map_()
 {
     Map = this;
+    std::pair<int, int> pr;
+    pr.first = 0;
+    pr.second = 0;
+    std::vector<std::pair<int, int>> s(MAP_X, pr);
+    for (int i = 0; i < MAP_Y; ++i)
+    {
+        bitmap.push_back(s);
+        //std::cout << bitmap[i][0].first << bitmap[i][0].second << std::endl;
+    }
 }
 
 void Map_::start()
 {
-    window = new sf::RenderWindow(sf::VideoMode(820*MULTI, 470*MULTI), "Car_project");
+    window = new sf::RenderWindow(sf::VideoMode(MAP_X*MULTI, MAP_Y*MULTI), "Car_project");
     event = new sf::Event;
 }

@@ -29,6 +29,7 @@
 #include <vector>
 #include <fstream>
 #include <chrono>
+#include "Map.h"
 
 using namespace std::chrono;
 
@@ -182,7 +183,7 @@ int func(msgbuf &buffer, Car_* cr)
     return x;
 }
 
-void Car_::move(std::chrono::milliseconds& time) {
+void Car_::move(std::chrono::milliseconds& time, Car_* cr) {
     //cout << (duration_cast< milliseconds >(system_clock::now().time_since_epoch())-time).count() << endl;
     int t = int(((duration_cast< milliseconds >(system_clock::now().time_since_epoch())-time).count() *speed)/1000);
     if (speed == 0)
@@ -193,24 +194,52 @@ void Car_::move(std::chrono::milliseconds& time) {
     }
     if (goals[1]->x-goals[0]->x > 0)
     {
+        if (Map_::get()->bitmap[cr->y][cr->x+CAR_LENGTH+3].first == 1)
+            while (Map_::get()->bitmap[cr->y][cr->x+CAR_LENGTH+3].first == 1)
+            {time = duration_cast< milliseconds >(system_clock::now().time_since_epoch());}
+        for (int i = cr->x-CAR_LENGTH-6; i <= cr->x-CAR_LENGTH; ++i)
+        {
+            Map_::get()->bitmap[cr->y][i].first = 0;
+        }
         x += t;
         time = duration_cast< milliseconds >(system_clock::now().time_since_epoch());
         return;
     }
     if (goals[1]->x-goals[0]->x < 0)
     {
+        if (Map_::get()->bitmap[cr->y][cr->x-CAR_LENGTH-3].second == 1)
+            while (Map_::get()->bitmap[cr->y][cr->x-CAR_LENGTH-3].second == 1)
+            {time = duration_cast< milliseconds >(system_clock::now().time_since_epoch());}
+        for (int i = cr->x+CAR_LENGTH; i <= cr->x+CAR_LENGTH+6; ++i)
+        {
+            Map_::get()->bitmap[cr->y][i].second = 0;
+        }
         x -= t;
         time = duration_cast< milliseconds >(system_clock::now().time_since_epoch());
         return;
     }
-    if (goals[1]->y-goals[0]->y >0)
+    if (goals[1]->y-goals[0]->y > 0)
     {
+        if (Map_::get()->bitmap[cr->y+CAR_LENGTH+3][cr->x].first == 1)
+            while (Map_::get()->bitmap[cr->y+CAR_LENGTH+3][cr->x].first == 1)
+            {time = duration_cast< milliseconds >(system_clock::now().time_since_epoch());}
+        for (int i = cr->y-CAR_LENGTH-6; i <= cr->y-CAR_LENGTH; ++i)
+        {
+            Map_::get()->bitmap[i][cr->x].first = 0;
+        }
         y += t;
         time = duration_cast< milliseconds >(system_clock::now().time_since_epoch());
         return;
     }
     if (goals[1]->y-goals[0]->y < 0)
     {
+        if (Map_::get()->bitmap[cr->y-CAR_LENGTH-3][cr->x].second == 1)
+            while (Map_::get()->bitmap[cr->y-CAR_LENGTH-3][cr->x].second == 1)
+            {time = duration_cast< milliseconds >(system_clock::now().time_since_epoch());}
+        for (int i = cr->y+CAR_LENGTH; i <= cr->y+CAR_LENGTH+6; ++i)
+        {
+            Map_::get()->bitmap[i][cr->x].second = 0;
+        }
         y -= t;
         time = duration_cast< milliseconds >(system_clock::now().time_since_epoch());
         return;
@@ -247,6 +276,12 @@ void* Car_::run()
     buf.mtype = 1;
     strcpy(buf.mtext, null);
     tm = (duration_cast< milliseconds >(system_clock::now().time_since_epoch()));
+
+    for (int i = x-20; i < x+20; ++i)
+        for (int j = y+20; j < y+20; ++j) {
+            Map_::get()->bitmap[j][i].first = 0;
+            Map_::get()->bitmap[j][i].second = 0;
+        }
 
     while (errno == 0 || !strcmp(buf.mtext, null)) {
 
@@ -293,10 +328,10 @@ void* Car_::run()
                         speed = CROSS_SPEED;
                     }
                 }
-            } else
+            } /*else
             {
                 speed = CROSS_SPEED;
-            }
+            }*/
         }
 
         if (delegate_flag == 0) {
@@ -320,7 +355,7 @@ void* Car_::run()
             }
         }
 
-        this->move(tm);
+        this->move(tm, this);
 
         if (abs(x - goals[1]->x) == 0 && abs(y - goals[1]->y) == 0) {
             mutx->lock();
@@ -347,6 +382,11 @@ void* Car_::run()
                   (goals[1]->y == goals[0]->y && goals[0]->y == r->y)) || (goals[1] == r)) {
                 usleep(150000);
             }
+            for (int i = x-10; i < x+10; ++i)
+                for (int j = y-10; j < y+10; ++j) {
+                    Map_::get()->bitmap[j][i].first = 0;
+                    Map_::get()->bitmap[j][i].second = 0;
+                }
             tm = (duration_cast< milliseconds >(system_clock::now().time_since_epoch()));
         }usleep(50);
     }

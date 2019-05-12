@@ -23,6 +23,6 @@ if(SFML_FOUND)
     message(STATUS "SFML_VERSION: ${SFML_VERSION}")
 endif()
 
-add_executable(SFMLApp car_project Car.h Map.h Building.h Building.cpp Car.cpp Map.cpp Cross.cpp Cross.h main.cpp)
+add_executable(SFMLApp /home/vladimir/CarProject Car.h Map.h Building.h Building.cpp Car.cpp Map.cpp Cross.cpp Cross.h main.cpp)
 
 target_link_libraries (SFMLApp sfml-graphics sfml-window sfml-system pthread)

@@ -1,3 +1,0 @@
-/home/vladimir/CarSimulation/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/vladimir/CarSimulation/cmake-build-debug/CMakeFiles/SFMLApp.dir
-/home/vladimir/CarSimulation/cmake-build-debug/CMakeFiles/edit_cache.dir
