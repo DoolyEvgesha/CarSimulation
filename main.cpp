@@ -90,7 +90,7 @@ Cross_* search(vector <Cross_*>* vec, int x, int y)
 
 int main()
 {
-    cout << "Helo!" << endl;
+    cout << "Hello!" << endl;
     Map_* m =           Map_::get();
     ifstream            finp("/home/vladimir/CarProject/data", ios_base::in);
     vector <Cross_*>    cross;
@@ -102,6 +102,7 @@ int main()
     int                 x, y;
     int                 x_el = 0, y_el = 0;
     vector<Car_*>        cars;
+    int num = 0;
     char c;
 
     while(code != 'e' && !finp.eof()) {
@@ -122,10 +123,14 @@ int main()
     {
         finp >> x_el >> c >> y_el >> code;
         elem = search(&(cross), x_el, y_el);
+        if (elem == nullptr)
+            return 0;
         while (code != 'e' && code != 'n')
         {
             finp >> x >> c >> y >> code;
             ex = search(&(cross), x, y);
+            if (ex == nullptr)
+                return 0;
             elem->rels.push_back(ex);
             elem->counter.push_back({ex, 0});
         }
@@ -139,6 +144,8 @@ int main()
         finp >> x >> c >> y >> code;
         cars.push_back(new Car_(x, y));
         ex = search(&(cross), x, y);
+        if (ex == nullptr)
+            return 0;
         cars[n]->goals.push_back(ex);
         while (code != 'e' && code != 'n')
         {
@@ -146,11 +153,26 @@ int main()
             ++i;
             cout<< x << " " << c << " " << y << " " << code << endl;
             ex = search(&(cross), x, y);
+            if (ex == nullptr)
+                return 0;
             cars[n]->goals.push_back(ex);
         }
         ++n;
     }
     finp.close();
+    for (int t = 0; t<n; ++t)
+    {
+        if (cars[t]->goals.size() == 1) {
+            num = rand() % (cars[t]->goals[cars[t]->goals.size() - 1]->rels.size()) + 0;
+            cars[t]->goals.push_back(cars[t]->goals[0]->rels[num]);
+            num = rand() % (cars[t]->goals[cars[t]->goals.size() - 1]->rels.size()) + 0;
+            cars[t]->goals.push_back(cars[t]->goals[1]->rels[num]);
+        }
+        if (cars[t]->goals.size() == 2) {
+            num = rand() % (cars[t]->goals[cars[t]->goals.size() - 1]->rels.size()) + 0;
+            cars[t]->goals.push_back(cars[t]->goals[1]->rels[num]);
+        }
+    }
 
     thread*      thr[n];
     int         msid[n+1];
@@ -168,6 +190,7 @@ int main()
     struct pollfd arr[1];
     arr[0].fd = 0;
     arr[0].events = POLLIN;
+    cout << int(sf::Color::White.r) << endl << int(sf::Color::White.g) << endl << int(sf::Color::White.b) << endl;
 
     while((m->window)->isOpen())
     {
@@ -177,7 +200,7 @@ int main()
             }
         }
         ser_end = 0;
-        flag = poll(arr, 1, 5);
+        flag = poll(arr, 1, 2);
         if (flag == 1)
         {
             cin >> id >> command;

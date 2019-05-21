@@ -11,6 +11,8 @@
 #define C_ZONE 22
 #define DLG_ZONE 40*/
 
+#define GRAD 100
+
 #include "Car.h"
 #include "Map.h"
 
@@ -194,10 +196,19 @@ void Car_::move(std::chrono::milliseconds& time, Car_* cr) {
     }
     if (goals[1]->x-goals[0]->x > 0)
     {
-        if (Map_::get()->bitmap[cr->y][cr->x+CAR_LENGTH+3].first == 1)
-            while (Map_::get()->bitmap[cr->y][cr->x+CAR_LENGTH+3].first == 1)
-            {time = duration_cast< milliseconds >(system_clock::now().time_since_epoch());}
-        for (int i = cr->x-CAR_LENGTH-6; i <= cr->x-CAR_LENGTH; ++i)
+        if (Map_::get()->bitmap[cr->y][cr->x+CAR_LENGTH+2*DISTANCE].first == 1) {
+            while (Map_::get()->bitmap[cr->y][cr->x + CAR_LENGTH + 2 * DISTANCE].first == 1) {
+                time = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
+                if ((time.count() - ticker.count()) / GRAD <= 255)
+                    color = 255 - (time.count() - ticker.count()) / GRAD;
+                usleep(50);
+            }
+            if (delegate_flag == 0) {
+                color = 255;
+                //ticker = duration_cast< milliseconds >(system_clock::now().time_since_epoch());
+            }
+        }
+        for (int i = cr->x-CAR_LENGTH-3*DISTANCE; i <= cr->x-CAR_LENGTH; ++i)
         {
             Map_::get()->bitmap[cr->y][i].first = 0;
         }
@@ -205,25 +216,41 @@ void Car_::move(std::chrono::milliseconds& time, Car_* cr) {
         time = duration_cast< milliseconds >(system_clock::now().time_since_epoch());
         return;
     }
-    if (goals[1]->x-goals[0]->x < 0)
-    {
-        if (Map_::get()->bitmap[cr->y][cr->x-CAR_LENGTH-3].second == 1)
-            while (Map_::get()->bitmap[cr->y][cr->x-CAR_LENGTH-3].second == 1)
-            {time = duration_cast< milliseconds >(system_clock::now().time_since_epoch());}
-        for (int i = cr->x+CAR_LENGTH; i <= cr->x+CAR_LENGTH+6; ++i)
-        {
+    if (goals[1]->x-goals[0]->x < 0) {
+        if (Map_::get()->bitmap[cr->y][cr->x - CAR_LENGTH - 2 * DISTANCE].second == 1) {
+            while (Map_::get()->bitmap[cr->y][cr->x - CAR_LENGTH - 2 * DISTANCE].second == 1) {
+                time = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
+                if ((time.count()-ticker.count())/GRAD<=255)
+                    color = 255-(time.count()-ticker.count())/GRAD;
+                usleep(50);
+            }
+            if (delegate_flag == 0) {
+                color = 255;
+                //ticker = duration_cast< milliseconds >(system_clock::now().time_since_epoch());
+            }
+        }
+        for (int i = cr->x + CAR_LENGTH; i <= cr->x + CAR_LENGTH + 3 * DISTANCE; ++i) {
             Map_::get()->bitmap[cr->y][i].second = 0;
         }
         x -= t;
-        time = duration_cast< milliseconds >(system_clock::now().time_since_epoch());
+        time = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
         return;
     }
     if (goals[1]->y-goals[0]->y > 0)
     {
-        if (Map_::get()->bitmap[cr->y+CAR_LENGTH+3][cr->x].first == 1)
-            while (Map_::get()->bitmap[cr->y+CAR_LENGTH+3][cr->x].first == 1)
-            {time = duration_cast< milliseconds >(system_clock::now().time_since_epoch());}
-        for (int i = cr->y-CAR_LENGTH-6; i <= cr->y-CAR_LENGTH; ++i)
+        if (Map_::get()->bitmap[cr->y+CAR_LENGTH+2*DISTANCE][cr->x].first == 1) {
+            while (Map_::get()->bitmap[cr->y + CAR_LENGTH + 2 * DISTANCE][cr->x].first == 1) {
+                time = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
+                if ((time.count()-ticker.count())/GRAD<=255)
+                    color = 255-(time.count()-ticker.count())/GRAD;
+                usleep(50);
+            }
+            if (delegate_flag == 0) {
+                color = 255;
+                //ticker = duration_cast< milliseconds >(system_clock::now().time_since_epoch());
+            }
+        }
+        for (int i = cr->y-CAR_LENGTH-3*DISTANCE; i <= cr->y-CAR_LENGTH; ++i)
         {
             Map_::get()->bitmap[i][cr->x].first = 0;
         }
@@ -233,10 +260,19 @@ void Car_::move(std::chrono::milliseconds& time, Car_* cr) {
     }
     if (goals[1]->y-goals[0]->y < 0)
     {
-        if (Map_::get()->bitmap[cr->y-CAR_LENGTH-3][cr->x].second == 1)
-            while (Map_::get()->bitmap[cr->y-CAR_LENGTH-3][cr->x].second == 1)
-            {time = duration_cast< milliseconds >(system_clock::now().time_since_epoch());}
-        for (int i = cr->y+CAR_LENGTH; i <= cr->y+CAR_LENGTH+6; ++i)
+        if (Map_::get()->bitmap[cr->y-CAR_LENGTH-2*DISTANCE][cr->x].second == 1) {
+            while (Map_::get()->bitmap[cr->y - CAR_LENGTH - 2 * DISTANCE][cr->x].second == 1) {
+                time = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
+                if ((time.count() - ticker.count()) / GRAD <= 255)
+                    color = 255 - (time.count() - ticker.count()) / GRAD;
+                usleep(50);
+            }
+            if (delegate_flag == 0) {
+                color = 255;
+                //ticker = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
+            }
+        }
+        for (int i = cr->y+CAR_LENGTH; i <= cr->y+CAR_LENGTH+3*DISTANCE; ++i)
         {
             Map_::get()->bitmap[i][cr->x].second = 0;
         }
@@ -248,6 +284,7 @@ void Car_::move(std::chrono::milliseconds& time, Car_* cr) {
 
 Car_::Car_()
 {
+    color = 0;
     id = 0;
     speed = SPEED;
     x = 0;
@@ -268,10 +305,13 @@ void* Car_::run()
     struct msgbuf   buf = {};
     int cross_flag = 0;
     int g;
-    int delegate_flag = 0;
+    delegate_flag = 0;
     int rast_end;
     int rast_beg;
     int mtx_flag = 0;
+    color = 255;
+
+    ticker = duration_cast< milliseconds >(system_clock::now().time_since_epoch());
 
     buf.mtype = 1;
     strcpy(buf.mtext, null);
@@ -352,12 +392,18 @@ void* Car_::run()
                 //cout << "Otpiska" << rast_beg << endl;
                 speed = SPEED;
                 delegate_flag = 0;
+                color = 255;
             }
         }
 
         this->move(tm, this);
 
+        if ((tm.count()-ticker.count())/GRAD<=255 && delegate_flag == 1)
+            color = 255-(tm.count()-ticker.count())/GRAD;
+
         if (abs(x - goals[1]->x) == 0 && abs(y - goals[1]->y) == 0) {
+            color = 255;
+            ticker = duration_cast< milliseconds >(system_clock::now().time_since_epoch());
             mutx->lock();
             x = goals[1]->x;
             y = goals[1]->y;
@@ -388,7 +434,7 @@ void* Car_::run()
                     Map_::get()->bitmap[j][i].second = 0;
                 }
             tm = (duration_cast< milliseconds >(system_clock::now().time_since_epoch()));
-        }usleep(50);
+        }usleep(100);
     }
     cout << "Car crushed" << endl;
     exit(0);

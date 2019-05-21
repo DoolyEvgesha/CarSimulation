@@ -76,7 +76,7 @@ void Map_::draw()
                     bitmap[c->y][i].first = 1;
                 car.setSize(sf::Vector2f(CAR_LENGTH * MULTI*2, CAR_WIDTH * MULTI*2));
                 car.setPosition((c->x - CAR_LENGTH) * MULTI, (c->y + 6) * MULTI);
-                car.setFillColor(sf::Color::White);
+                car.setFillColor(sf::Color(255, c->color, c->color, 255));
             }
             if (c->goals[1]->x - c->goals[0]->x < 0)
             {
@@ -84,7 +84,7 @@ void Map_::draw()
                     bitmap[c->y][i].second = 1;
                 car.setSize(sf::Vector2f(CAR_LENGTH * MULTI*2, CAR_WIDTH * MULTI*2));
                 car.setPosition((c->x - CAR_LENGTH) * MULTI, (c->y - 2*CAR_WIDTH - 6) * MULTI);
-                car.setFillColor(sf::Color::White);
+                car.setFillColor(sf::Color(255, c->color, c->color, 255));
             }
             if (c->goals[1]->y - c->goals[0]->y > 0)
             {
@@ -92,7 +92,7 @@ void Map_::draw()
                     bitmap[i][c->x].first = 1;
                 car.setSize(sf::Vector2f(CAR_WIDTH * MULTI*2, CAR_LENGTH * MULTI*2));
                 car.setPosition((c->x - 6 - CAR_WIDTH*2) * MULTI, (c->y - CAR_LENGTH) * MULTI);
-                car.setFillColor(sf::Color::White);
+                car.setFillColor(sf::Color(255, c->color, c->color, 255));
             }
             if (c->goals[1]->y - c->goals[0]->y < 0)
             {
@@ -100,7 +100,7 @@ void Map_::draw()
                     bitmap[i][c->x].second = 1;
                 car.setSize(sf::Vector2f(CAR_WIDTH * MULTI*2, CAR_LENGTH * MULTI*2));
                 car.setPosition((c->x + 6) * MULTI, (c->y - CAR_LENGTH) * MULTI);
-                car.setFillColor(sf::Color::White);
+                car.setFillColor(sf::Color(255, c->color, c->color, 255));
             }
             //c->mutx->unlock();
             window->draw(car);
